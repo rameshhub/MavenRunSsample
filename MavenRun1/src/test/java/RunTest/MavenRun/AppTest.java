@@ -59,7 +59,7 @@ public class AppTest extends InheritanceOne {
 
 	    driverForFireFox.findElement(By.id("folder-edit-name-input-ok")).click();
 		
-		
+		//comment
 	
 
 	}
