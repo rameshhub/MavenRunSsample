@@ -1,9 +1,8 @@
 package RunTest.MavenRun;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.util.concurrent.TimeUnit;
-
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+
 
 public class AppTest extends InheritanceOne {
 	
@@ -89,7 +87,7 @@ public class AppTest extends InheritanceOne {
             wait.until(expectation);
             
         } catch (Throwable error) {
-            Assert.fail("Timeout waiting for Page Load Request to complete.");
+            AssertJUnit.fail("Timeout waiting for Page Load Request to complete.");
         }
     }
 
@@ -101,11 +99,31 @@ public class AppTest extends InheritanceOne {
 		
 		ac.moveToElement(driverForFireFox.findElement(By.xpath("//div[@id='files-item-list']/section[2]"))).click().perform();
 		
+		//ac.moveToElement(driverForFireFox.findElement(By.xpath("//*[@id='filesandfolders-link-members']"))).click().perform();
+		
+		//ac.moveToElement(driverForFireFox.findElement(By.xpath("//*[@id='members-add-dropdown-btn']"))).click().perform();
+		
+	
+		
+		ac.moveToElement(driverForFireFox.findElement(By.id("filesandfolders-btn-settings"))).click().perform();
+		//driverForFireFox.switchTo().activeElement();
+		
+		driverForFireFox.findElement(By.xpath("//div[@class='permissions-control']/div[@id='members-add-people-region']/section/div[1]")).click();
+		driverForFireFox.findElement(By.xpath("//div[@class='permissions-control']/div[@id='members-login-region']/section/div[1]")).click();
+		driverForFireFox.findElement(By.xpath("//div[@class='permissions-control']/div[@id='members-download-region']/section/div[1]")).click();
+		
+		driverForFireFox.findElement(By.xpath("//div[@class='permissions-control']/div[@id='members-addremove-region']/section/div[1]")).click();
+		
+		driverForFireFox.findElement(By.xpath("//div[@class='permissions-control']/div[@id='members-addversion-region']/section/div[1]")).click();
+		
+		
+		driverForFireFox.findElement(By.xpath("//*[@id='saveButton']")).click();
+		
 		ac.moveToElement(driverForFireFox.findElement(By.xpath("//*[@id='filesandfolders-link-members']"))).click().perform();
 		
 		ac.moveToElement(driverForFireFox.findElement(By.xpath("//*[@id='members-add-dropdown-btn']"))).click().perform();
 		
-	
+		
 		
 	}
 	
